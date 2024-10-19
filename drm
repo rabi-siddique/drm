@@ -1,0 +1,26 @@
+#! /bin/bash
+
+containerNumber=$1
+
+if ! [[ $containerNumber =~ ^[0-9]+$ ]]; then
+    echo "Invalid Argument: Must be a number" >&2
+    exit 1
+fi
+
+containerIDs=$(docker ps -q)
+parts=($containerIDs)
+
+count=1
+for part in "${parts[@]}"; do
+    if [[ $count -eq $containerNumber ]]; then
+        docker rm "$part" -f
+        echo "Container removed successfully"
+        exit 0
+    fi
+    ((count++))
+done
+
+echo "Container number $containerNumber does not exist." >&2
+exit 1 
+
+
