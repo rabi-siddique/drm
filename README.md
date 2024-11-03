@@ -2,8 +2,6 @@ When working with Docker, I often find myself repeatedly running `docker ps` to 
 
 # How `drm` works
 
-I've developed a custom script that helps a little with my productivity by eliminating the need for copy-pasting! 😄
-
 I've developed a custom script that enhances a little bit of my productivity by
 saving me a Copy Paste :D . Here’s how it improves my workflow:
 
